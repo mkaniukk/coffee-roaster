@@ -17,9 +17,7 @@ export default function Coffees() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
-                <div className={styles.header}>
-                    Coffees Page
-                </div>
+                <div className={styles.header}>Login Page</div>
             </main>
         </>
     );
