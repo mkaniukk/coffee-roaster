@@ -26,8 +26,8 @@ export default function Home() {
                     <Link className={styles.card} href="/coffees">
                         Coffees
                     </Link>
-                    <Link className={styles.card} href="/favourites">
-                        Favourites
+                    <Link className={styles.card} href="/map">
+                        Map
                     </Link>
                     <Link className={styles.card} href="/profile">
                         Profile
