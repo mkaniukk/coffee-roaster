@@ -1,19 +1,16 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
+import { Coffee } from '../../models/Coffee/CoffeeModel';
 
 type GetStaticPathsParams = {
     params: { id: number };
 };
 
-type Coffee = {
-    Id: number;
-};
-
-type CoffeeParam = {
+type CoffeeParams = {
     coffee: Coffee;
 };
 
-export default function Coffee({ coffee }: CoffeeParam) {
+export default function Coffee({ coffee }: CoffeeParams) {
     console.log(coffee);
 
     return (
