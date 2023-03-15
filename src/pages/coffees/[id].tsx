@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
+import getIds from '../api/coffees';
 
-export default function Coffee() {
+export default function Coffee({ coffee }: any) {
+    console.log(coffee);
+
     return (
         <>
             <Head>
@@ -20,23 +23,38 @@ export default function Coffee() {
                 />
             </Head>
             <main className={styles.main}>
-                <div className={styles.header}>Coffee Page</div>
+                <div className={styles.header}>Coffee {coffee.Id} Page</div>
             </main>
         </>
     );
 }
 
 export async function getStaticPaths() {
-    return {
-        paths: [{ params: { id: '1' } }, { params: { id: '2' } }],
-        fallback: false, // can also be true or 'blocking'
-    };
+    const coffees = await fetch(`http://127.0.0.1:3000/api/coffees`).then(
+        (data) => {
+            return data.json();
+        },
+    );
+
+    const paths = await coffees.map((coffee: { Id: number }) => ({
+        params: { id: coffee.Id },
+    }));
+
+    return { paths, fallback: false };
 }
 
 // `getStaticPaths` requires using `getStaticProps`
-export async function getStaticProps() {
+export async function getStaticProps(context: any) {
+    const { id } = context.params;
+
+    const coffee = await fetch(`http://127.0.0.1:3000/api/coffees/${id}`).then(
+        (data) => {
+            return data.json();
+        },
+    );
+
     return {
         // Passed to the page component as props
-        props: { post: {} },
+        props: { coffee },
     };
 }

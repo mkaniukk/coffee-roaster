@@ -23,10 +23,10 @@
         "**/*.ts",
         "**/*.tsx",
         "src/pages/recipe",
-        "lib/mongodb.js",
-        "lib/mongodb.js",
-        "lib/mongodb.js",
-        "lib/mongodb.js"
+        "lib/mongodb.ts",
+        "lib/mongodb.ts",
+        "lib/mongodb.ts",
+        "lib/mongodb.ts"
     ],
     "exclude": ["node_modules"]
 }

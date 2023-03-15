@@ -18,7 +18,7 @@ export default async function handler(
 
         if (!Array.isArray(coffee) || !coffee.length)
             res.status(404).send('Error 404: No coffee with a given Id.');
-        res.status(200).json(coffee);
+        res.status(200).json(coffee.pop());
     } catch (e) {
         console.error(e);
     }

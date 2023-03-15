@@ -1,6 +1,22 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
+import clientPromise from '../../../../lib/mongodb';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    res.status(200).json({ coffee: 'Coffee' });
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse,
+) {
+    const { id } = req.query;
+    try {
+        const client = await clientPromise;
+        const db = client.db('coffee-roaster');
+
+        const coffees = await db.collection('coffees').find({}).toArray();
+
+        if (!Array.isArray(coffees) || !coffees.length)
+            res.status(404).send('Error 404: No coffee with a given Id.');
+        res.status(200).json(coffees);
+    } catch (e) {
+        console.error(e);
+    }
 }
