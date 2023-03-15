@@ -1,10 +1,4 @@
 import Head from 'next/head';
-import type {
-    GetServerSideProps,
-    GetServerSidePropsContext,
-    GetStaticProps,
-    PreviewData,
-} from 'next';
 import styles from '@/styles/Home.module.css';
 
 type GetStaticPathsParams = {
