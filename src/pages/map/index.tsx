@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import MapComponent from '@/ components/MapComponent';
 
-export default function Map() {
+export default function MapPage() {
     return (
         <>
             <Head>
