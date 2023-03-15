@@ -1,8 +1,25 @@
 import Head from 'next/head';
+import type {
+    GetServerSideProps,
+    GetServerSidePropsContext,
+    GetStaticProps,
+    PreviewData,
+} from 'next';
 import styles from '@/styles/Home.module.css';
-import getIds from '../api/coffees';
 
-export default function Coffee({ coffee }: any) {
+type GetStaticPathsParams = {
+    params: { id: number };
+};
+
+type Coffee = {
+    Id: number;
+};
+
+type CoffeeParam = {
+    coffee: Coffee;
+};
+
+export default function Coffee({ coffee }: CoffeeParam) {
     console.log(coffee);
 
     return (
@@ -44,7 +61,7 @@ export async function getStaticPaths() {
 }
 
 // `getStaticPaths` requires using `getStaticProps`
-export async function getStaticProps(context: any) {
+export async function getStaticProps(context: GetStaticPathsParams) {
     const { id } = context.params;
 
     const coffee = await fetch(`http://127.0.0.1:3000/api/coffees/${id}`).then(
