@@ -156,6 +156,9 @@
     font-size: 3rem;
 }
 
+.coffee-card {
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
     .card:hover {
