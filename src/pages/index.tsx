@@ -76,23 +76,6 @@ export default function Home() {
                     </div>
                 </div>
             </nav>
-            {/* <main className={styles.main}>
-                <div className={styles.grid}>
-                    <a className={styles.card}>Coffee Roaster App</a>
-                    <Link className={styles.card} href="/coffees">
-                        Coffees
-                    </Link>
-                    <Link className={styles.card} href="/map">
-                        Map
-                    </Link>
-                    <Link className={styles.card} href="/profile">
-                        Profile
-                    </Link>
-                    <Link className={styles.card} href="/login">
-                        Log in
-                    </Link>
-                </div>
-            </main> */}
         </>
     );
 }
