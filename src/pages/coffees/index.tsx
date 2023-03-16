@@ -24,16 +24,16 @@ export default function CoffeesPage({ coffees }: CoffeeParams) {
             </Head>
             <main className={styles.main}>
                 <div className={styles.header}>Coffees Page</div>
-                <ul>
+                <ul className="grid grid-cols-3 gap-3">
                     {coffees.map((coffee) => {
                         return (
                             <Link
-                                key={coffee.Id}
-                                className={styles.card}
+                                key={coffee._id}
+                                className="border-4 border-gray-600 hover:bg-gray-400/50"
                                 href={`/coffees/${+coffee.Id - 1}`}
                             >
                                 <button className={styles.header}>
-                                    {coffee.Id}
+                                    {coffee.Owner}
                                 </button>
                             </Link>
                         );
