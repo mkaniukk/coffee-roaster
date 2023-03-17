@@ -28,7 +28,7 @@ export default function CoffeesPage({ coffees }: CoffeeParams) {
                     {coffees.map((coffee) => {
                         return (
                             <Link
-                                key={coffee._id}
+                                key={+coffee._id}
                                 className="border-4 border-gray-600 hover:bg-gray-400/50"
                                 href={`/coffees/${+coffee.Id - 1}`}
                             >
