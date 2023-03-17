@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import MapComponent from '@/ components/MapComponent';
+import NavBar from '@/ components/NavBarComponent';
 
 export default function MapPage() {
     return (
@@ -18,6 +19,7 @@ export default function MapPage() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
+                <NavBar />
                 <MapComponent />
             </main>
         </>

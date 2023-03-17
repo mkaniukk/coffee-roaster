@@ -13,7 +13,7 @@ const center = {
     lng: -38.523,
 };
 
-function MapComponent() {
+const MapComponent = () => {
     return (
         <LoadScript googleMapsApiKey={googleMapsApiKey}>
             <GoogleMap
@@ -26,6 +26,6 @@ function MapComponent() {
             </GoogleMap>
         </LoadScript>
     );
-}
+};
 
 export default React.memo(MapComponent);

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import { Coffee } from '../../models/Coffee/CoffeeModel';
 import Link from 'next/link';
+import NavBar from '@/ components/NavBarComponent';
 
 type GetStaticPathsParams = {
     params: { id: number };
@@ -32,6 +33,7 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
                 />
             </Head>
             <main className={styles.main}>
+                <NavBar />
                 <div className={styles.grid}>
                     <Link
                         className={styles.card}
@@ -39,9 +41,7 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
                     >
                         <button className={styles.header}>+</button>
                     </Link>
-                    <div className={styles.header}>
-                        Coffee {coffee.Owner[1]} Page
-                    </div>
+                    <div className={styles.header}>Coffee {coffee.Id} Page</div>
                     <Link
                         className={styles.card}
                         href={`/coffees/${+coffee.Id - 1}`}

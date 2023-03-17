@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import { Coffee } from '../../models/Coffee/CoffeeModel';
 import Link from 'next/link';
+import NavBar from '@/ components/NavBarComponent';
 
 type CoffeeParams = {
     coffees: Array<Coffee>;
@@ -23,6 +24,8 @@ export default function CoffeesPage({ coffees }: CoffeeParams) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
+                <NavBar />
+
                 <div className={styles.header}>Coffees Page</div>
                 <ul className="grid grid-cols-3 gap-3">
                     {coffees.map((coffee) => {
