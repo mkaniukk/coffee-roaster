@@ -22,8 +22,10 @@ export default function Home() {
                     href="https://www.flaticon.com/free-icons/coffee"
                 />
             </Head>
-            <NavBar />
-            <MapComponent />
+            <main className={styles.main}>
+                <NavBar />
+                <MapComponent />
+            </main>
         </>
     );
 }

@@ -25,7 +25,6 @@ export default function CoffeesPage({ coffees }: CoffeeParams) {
             </Head>
             <main className={styles.main}>
                 <NavBar />
-
                 <div className={styles.header}>Coffees Page</div>
                 <ul className="grid grid-cols-3 gap-3">
                     {coffees.map((coffee) => {
