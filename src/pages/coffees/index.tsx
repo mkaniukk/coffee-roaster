@@ -31,7 +31,7 @@ export default function CoffeesPage({ coffees }: CoffeeParams) {
                         return (
                             <Link
                                 key={+coffee._id}
-                                className="border-4 border-gray-600 hover:bg-gray-400/50"
+                                className="border-4 text-center border-gray-600 hover:bg-gray-400/50"
                                 href={`/coffees/${+coffee.Id - 1}`}
                             >
                                 <button className={styles.header}>

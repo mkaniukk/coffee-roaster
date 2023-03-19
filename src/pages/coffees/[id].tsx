@@ -34,14 +34,34 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
             </Head>
             <main className={styles.main}>
                 <NavBar />
-                <div className={styles.grid}>
+                <a className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Coffee {coffee.Id} Page{' '}
+                    </h5>
+                    {coffee.Company && (
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                            Company: {coffee?.Company?.toUpperCase()}
+                        </p>
+                    )}
+                    {coffee.Producer && (
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                            Producer: {coffee?.Producer?.toUpperCase()}
+                        </p>
+                    )}
+                    {coffee.Region && (
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                            Region: {coffee?.Region?.toUpperCase()}
+                        </p>
+                    )}
+                </a>
+                <div className="grid-cols-2">
                     <Link
                         className={styles.card}
                         href={`/coffees/${+coffee.Id + 1}`}
                     >
                         <button className={styles.header}>+</button>
                     </Link>
-                    <div className={styles.header}>Coffee {coffee.Id} Page</div>
+
                     <Link
                         className={styles.card}
                         href={`/coffees/${+coffee.Id - 1}`}
