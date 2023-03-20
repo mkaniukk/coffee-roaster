@@ -22,4 +22,18 @@ export const ProductSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    Farm: {
+        Name: {
+            type: String,
+        },
+        required: false,
+    },
+    Country: {
+        of: {
+            Origin: {
+                type: String,
+            },
+        },
+        required: false,
+    },
 });

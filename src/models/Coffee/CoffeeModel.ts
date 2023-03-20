@@ -11,7 +11,8 @@ export type Coffee = {
     Body: number;
     Color: string | undefined;
     Company: string | undefined;
-    Country: { Of: { Origin: string } };
+    Country: { of: { Origin: string } };
+    Farm: { Name: string };
     Cupper: { Points: number };
     Flavor: number;
     Harvest: { Year: string };
