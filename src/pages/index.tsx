@@ -22,7 +22,7 @@ export default function Home() {
                     href="https://www.flaticon.com/free-icons/coffee"
                 />
             </Head>
-            <main className={styles.main}>
+            <main className="grid-rows-2">
                 <NavBar />
                 <MapComponent />
             </main>
