@@ -3,6 +3,7 @@ import styles from '@/styles/Home.module.css';
 import { Coffee } from '../../models/Coffee/CoffeeModel';
 import Link from 'next/link';
 import NavBar from '@/ components/NavBarComponent';
+import MapComponent from '@/ components/MapComponent';
 
 type GetStaticPathsParams = {
     params: { id: number };
@@ -69,6 +70,7 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
                         <button className={styles.header}>-</button>
                     </Link>
                 </div>
+                <MapComponent location={coffee?.Region} />
             </main>
         </>
     );

@@ -13,16 +13,18 @@ const center = {
     lng: -38.523,
 };
 
-const parameters = { query: 'BOGOTA' };
+type MapProps = {
+    location?: string;
+};
 
-const MapComponent = () => {
+const MapComponent = ({ location }: MapProps) => {
     const [place, setPlace] = useState(center);
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         const getPlaceData = async () => {
             const place = await fetch(
-                `https://maps.googleapis.com/maps/api/place/textsearch/json?key=${googleMapsApiKey}&query=${parameters.query}`,
+                `https://maps.googleapis.com/maps/api/place/textsearch/json?key=${googleMapsApiKey}&query=${location}`,
             ).then((data) => {
                 console.log(data);
                 return data.json();
