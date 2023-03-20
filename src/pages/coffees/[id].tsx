@@ -44,6 +44,11 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
                             Company: {coffee?.Company?.toUpperCase()}
                         </p>
                     )}
+                    {coffee.Company && (
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                            Country: {coffee?.Country?.of?.Origin.toUpperCase()}
+                        </p>
+                    )}
                     {coffee.Producer && (
                         <p className="font-normal text-gray-700 dark:text-gray-400">
                             Producer: {coffee?.Producer?.toUpperCase()}
@@ -54,23 +59,36 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
                             Region: {coffee?.Region?.toUpperCase()}
                         </p>
                     )}
+                    {coffee?.Farm?.Name && (
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                            Farm: {coffee?.Farm?.Name.toUpperCase()}
+                        </p>
+                    )}
                 </a>
                 <div className="grid-cols-2">
                     <Link
                         className={styles.card}
                         href={`/coffees/${+coffee.Id + 1}`}
                     >
-                        <button className={styles.header}>+</button>
+                        <button className={styles.header}>&#8592;</button>
                     </Link>
 
                     <Link
                         className={styles.card}
                         href={`/coffees/${+coffee.Id - 1}`}
                     >
-                        <button className={styles.header}>-</button>
+                        <button className={styles.header}>&#8594;</button>
                     </Link>
                 </div>
-                <MapComponent location={coffee?.Region} />
+                <MapComponent
+                    location={
+                        coffee?.Farm?.Name +
+                        ' ' +
+                        coffee?.Region +
+                        ' ' +
+                        coffee?.Country?.of?.Origin
+                    }
+                />
             </main>
         </>
     );
