@@ -29,13 +29,12 @@ const MapComponent = ({ location }: MapProps) => {
                 console.log(data);
                 return data.json();
             });
-            console.log(place.results[0].geometry.location);
-            const newPlace = place.results[0].geometry.location;
+            const newPlace = place.results[0]?.geometry.location;
             setPlace((place) => newPlace);
         };
         getPlaceData();
         setIsMounted(true);
-    }, []);
+    }, [location]);
 
     return (
         <LoadScript googleMapsApiKey={googleMapsApiKey}>
@@ -45,7 +44,7 @@ const MapComponent = ({ location }: MapProps) => {
                 zoom={8}
             >
                 {/* Child components, such as markers, info windows, etc. */}
-                {isMounted && <Marker position={place}></Marker>}
+                {isMounted && <Marker position={place} />}
                 <></>
             </GoogleMap>
         </LoadScript>
