@@ -20,7 +20,6 @@ export default function MapPage() {
             </Head>
             <main className="grid-rows-2">
                 <NavBar />
-
                 <MapComponent />
             </main>
         </>

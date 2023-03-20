@@ -68,14 +68,14 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
                 <div className="grid-cols-2">
                     <Link
                         className={styles.card}
-                        href={`/coffees/${+coffee.Id + 1}`}
+                        href={`/coffees/${+coffee.Id - 1}`}
                     >
                         <button className={styles.header}>&#8592;</button>
                     </Link>
 
                     <Link
                         className={styles.card}
-                        href={`/coffees/${+coffee.Id - 1}`}
+                        href={`/coffees/${+coffee.Id + 1}`}
                     >
                         <button className={styles.header}>&#8594;</button>
                     </Link>

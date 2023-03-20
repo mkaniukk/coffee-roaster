@@ -44,7 +44,7 @@ const MapComponent = ({ location }: MapProps) => {
                 zoom={8}
             >
                 {/* Child components, such as markers, info windows, etc. */}
-                {isMounted && <Marker position={place} />}
+                {place && <Marker position={place} />}
                 <></>
             </GoogleMap>
         </LoadScript>
