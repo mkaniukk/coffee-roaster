@@ -18,7 +18,7 @@ export default function MapPage() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="grid-rows-2">
+            <main className="grid-rows-2 h-full">
                 <NavBar />
                 <MapComponent />
             </main>
