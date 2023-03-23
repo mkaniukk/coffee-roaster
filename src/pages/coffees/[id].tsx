@@ -64,6 +64,11 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
                             Farm: {coffee?.Farm?.Name.toUpperCase()}
                         </p>
                     )}
+                    {coffee?.Total?.Cup?.Points && (
+                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                            Points: {coffee?.Total?.Cup?.Points.toUpperCase()}
+                        </p>
+                    )}
                 </a>
                 <div className="grid-cols-2">
                     <Link

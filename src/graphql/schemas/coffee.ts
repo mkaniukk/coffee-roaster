@@ -36,4 +36,12 @@ export const ProductSchema = new mongoose.Schema({
         },
         required: false,
     },
+    Total: {
+        Cup: {
+            Points: {
+                type: String,
+            },
+        },
+        required: false,
+    },
 });
