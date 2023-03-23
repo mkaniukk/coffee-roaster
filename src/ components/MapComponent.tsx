@@ -19,7 +19,6 @@ type MapProps = {
 
 const MapComponent = ({ location }: MapProps) => {
     const [place, setPlace] = useState(center);
-    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         const getPlaceData = async () => {
@@ -33,7 +32,6 @@ const MapComponent = ({ location }: MapProps) => {
             setPlace((place) => newPlace);
         };
         getPlaceData();
-        setIsMounted(true);
     }, [location]);
 
     return (
