@@ -66,7 +66,7 @@ export default function CoffeePage({ coffee }: CoffeeParams) {
                     )}
                     {coffee?.Total?.Cup?.Points && (
                         <p className="font-normal text-gray-700 dark:text-gray-400">
-                            Points: {coffee?.Total?.Cup?.Points.toUpperCase()}
+                            Points: {coffee?.Total?.Cup?.Points}
                         </p>
                     )}
                 </a>
