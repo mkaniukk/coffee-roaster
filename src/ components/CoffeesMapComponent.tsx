@@ -31,7 +31,7 @@ const CoffeesMapComponent = ({ locations }: CoffeesMapProps) => {
                         .then((place) => place.results[0]?.geometry.location);
                 }),
             );
-            setPlaces(places);
+            setPlaces([...places]);
             console.log(places);
         };
         getPlaceData();
